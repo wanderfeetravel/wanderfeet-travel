@@ -156,6 +156,26 @@ a { color: inherit; }
 .placeholder-badge { align-self: flex-start; background: rgba(30,136,229,0.1); color: var(--sky); border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.75rem; font-weight: 800; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 
+.widget-stack { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+.widget-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.8fr); gap: 1.25rem; align-items: start; margin-top: 2.5rem; }
+.widget-grid .widget-panel:first-child { grid-row: span 2; }
+.widget-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 3px 12px rgba(10,46,82,0.04);
+  overflow: hidden;
+}
+.travel-widget {
+  width: 100%;
+  min-height: 150px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+.travel-widget iframe, .travel-widget > div { max-width: 100%; }
+.travel-widget-compact { min-height: 250px; }
+
 .shop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.35rem; margin-top: 2.5rem; }
 .shop-card {
   background: var(--white);
@@ -240,6 +260,8 @@ a { color: inherit; }
   .hero-actions, .hero-stats { justify-content: center; }
   .hero-visual { display: none; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .widget-grid { grid-template-columns: 1fr; }
+  .widget-grid .widget-panel:first-child { grid-row: auto; }
   .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shop-card img { height: 190px; }
   .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -249,6 +271,8 @@ a { color: inherit; }
   .section { padding: 4rem 0; }
   .page-hero { padding: 8rem 0 3.5rem; }
   .grid-2, .grid-3, .grid-4, .form-row { grid-template-columns: 1fr; }
+  .widget-panel { padding: 1rem; }
+  .travel-widget { min-height: 180px; }
   .shop-grid { grid-template-columns: 1fr; }
   .shop-card img { height: 180px; }
   .shop-card-body { min-height: auto; }
