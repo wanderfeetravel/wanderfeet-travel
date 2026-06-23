@@ -156,6 +156,32 @@ a { color: inherit; }
 .placeholder-badge { align-self: flex-start; background: rgba(30,136,229,0.1); color: var(--sky); border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.75rem; font-weight: 800; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 
+.shop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.35rem; margin-top: 2.5rem; }
+.shop-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(10,46,82,0.04);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.shop-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(30,136,229,0.2); }
+.shop-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: var(--smoke); }
+.shop-card-body { padding: 1.2rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.65rem; min-height: 245px; }
+.shop-card-body .card-title { margin-bottom: 0; }
+.shop-card-body .card-text { margin-bottom: auto; }
+.shop-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(245,166,35,0.15);
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
 .form-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; box-shadow: var(--shadow); }
 .form-title { font-size: 1.3rem; margin-bottom: 1.25rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -207,6 +233,7 @@ a { color: inherit; }
   .hero-actions, .hero-stats { justify-content: center; }
   .hero-visual { display: none; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
@@ -214,6 +241,8 @@ a { color: inherit; }
   .section { padding: 4rem 0; }
   .page-hero { padding: 8rem 0 3.5rem; }
   .grid-2, .grid-3, .grid-4, .form-row { grid-template-columns: 1fr; }
+  .shop-grid { grid-template-columns: 1fr; }
+  .shop-card-body { min-height: auto; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .btn { width: 100%; }
