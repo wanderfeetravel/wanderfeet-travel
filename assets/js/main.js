@@ -94,6 +94,30 @@ function mountFloatingWhatsApp() {
   target.innerHTML = `<a class="wa-float" href="${waLink()}" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">💬</a>`;
 }
 
+function mountCookieConsent() {
+  const target = document.querySelector('[data-component="cookie-consent"]');
+  if (!target || !document.body.dataset.cookies) return;
+  if (localStorage.getItem('wfCookieConsent') === 'accepted') return;
+  target.innerHTML = `
+    <div class="cookie-consent show" role="region" aria-label="Aviso de cookies">
+      <div class="cookie-box">
+        <div>
+          <h2>Uso de cookies</h2>
+          <p>Usamos cookies y scripts de aliados para mejorar la experiencia, medir rendimiento y mostrar servicios de viaje integrados.</p>
+        </div>
+        <div class="cookie-actions">
+          <a class="btn btn-small btn-outline cookie-legal" href="${WF_BASE}politica-privacidad/">Privacidad</a>
+          <button class="btn btn-small btn-primary" type="button" id="acceptCookies">Aceptar</button>
+        </div>
+      </div>
+    </div>`;
+  const banner = target.querySelector('.cookie-consent');
+  target.querySelector('#acceptCookies')?.addEventListener('click', () => {
+    localStorage.setItem('wfCookieConsent', 'accepted');
+    banner?.classList.remove('show');
+  });
+}
+
 function mountProfessionalModal() {
   if (!document.body.dataset.modal) return;
   const modal = document.createElement('div');
@@ -298,6 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mountNav();
   mountFooter();
   mountFloatingWhatsApp();
+  mountCookieConsent();
   mountProfessionalModal();
   initMenu();
   initReveal();
