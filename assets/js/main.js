@@ -145,6 +145,42 @@ function initWhatsAppButtons() {
   });
 }
 
+function initVisaModals() {
+  const modal = document.getElementById('visaModal');
+  if (!modal) return;
+  const title = document.getElementById('visaModalTitle');
+  const text = document.getElementById('visaModalText');
+  const list = document.getElementById('visaModalList');
+  const image = modal.querySelector('.visa-modal-img');
+  const wa = document.getElementById('visaModalWa');
+  const closeButton = modal.querySelector('.visa-modal-close');
+  const close = () => {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  };
+  document.querySelectorAll('.visa-detail-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      title.textContent = button.dataset.visaTitle || 'Servicio de visa';
+      text.textContent = button.dataset.visaText || '';
+      image.src = button.dataset.visaImage || '../assets/img/visas/documentos-asesoria.png';
+      image.alt = button.dataset.visaTitle || 'Servicio de visa';
+      list.innerHTML = (button.dataset.visaIncludes || '')
+        .split('|')
+        .filter(Boolean)
+        .map((item) => `<li>${item}</li>`)
+        .join('');
+      wa.href = waLink(button.dataset.visaWa || `Hola, quiero informacion sobre ${title.textContent} con WanderFeet Travel & Visa.`);
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    });
+  });
+  closeButton?.addEventListener('click', close);
+  modal.addEventListener('click', (event) => { if (event.target === modal) close(); });
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && modal.classList.contains('show')) close(); });
+}
+
 function initFlightForm() {
   const form = document.getElementById('flightForm');
   if (!form) return;
@@ -266,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initReveal();
   initWhatsAppButtons();
+  initVisaModals();
   initFlightForm();
   initContactForm();
   initGlobe();

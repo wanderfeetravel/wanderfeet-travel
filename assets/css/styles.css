@@ -176,6 +176,61 @@ a { color: inherit; }
 .travel-widget iframe, .travel-widget > div { max-width: 100%; }
 .travel-widget-compact { min-height: 250px; }
 
+.visa-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.35rem; margin-top: 2.5rem; }
+.visa-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(10,46,82,0.04);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.visa-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(30,136,229,0.2); }
+.visa-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: var(--smoke);
+}
+.visa-card-body {
+  min-height: 245px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+.visa-card-body .card-title { margin-bottom: 0; }
+.visa-card-body .card-text { margin-bottom: auto; }
+.visa-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 320;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(10,46,82,0.62);
+}
+.visa-modal.show { display: flex; }
+.visa-modal-box {
+  width: min(920px, 100%);
+  max-height: min(86vh, 760px);
+  overflow: auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(0,0,0,0.28);
+  position: relative;
+}
+.visa-modal-img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; background: var(--smoke); }
+.visa-modal-content { padding: 2rem; }
+.visa-modal-content .section-title { font-size: clamp(1.45rem, 3vw, 2.1rem); }
+.visa-modal-content .list { margin: 1.25rem 0 1.5rem; }
+.modal-open { overflow: hidden; }
+
 .shop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.35rem; margin-top: 2.5rem; }
 .shop-card {
   background: var(--white);
@@ -262,6 +317,10 @@ a { color: inherit; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .widget-grid { grid-template-columns: 1fr; }
   .widget-grid .widget-panel:first-child { grid-row: auto; }
+  .visa-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .visa-card img { height: 200px; }
+  .visa-modal-box { grid-template-columns: 1fr; }
+  .visa-modal-img { min-height: 240px; max-height: 300px; }
   .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shop-card img { height: 190px; }
   .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -273,6 +332,10 @@ a { color: inherit; }
   .grid-2, .grid-3, .grid-4, .form-row { grid-template-columns: 1fr; }
   .widget-panel { padding: 1rem; }
   .travel-widget { min-height: 180px; }
+  .visa-grid { grid-template-columns: 1fr; }
+  .visa-card img { height: 190px; }
+  .visa-card-body { min-height: auto; }
+  .visa-modal-content { padding: 1.25rem; }
   .shop-grid { grid-template-columns: 1fr; }
   .shop-card img { height: 180px; }
   .shop-card-body { min-height: auto; }
