@@ -334,6 +334,8 @@ a { color: inherit; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sky); }
 .form-group textarea { min-height: 105px; resize: vertical; }
 .form-submit { width: 100%; }
+.form-privacy-note { margin-top: 0.85rem; color: var(--gray); font-size: 0.78rem; line-height: 1.5; }
+.form-privacy-note a { color: var(--navy); font-weight: 800; }
 
 .contact-channel { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; background: var(--white); margin-bottom: 0.9rem; }
 .channel-icon { width: 44px; height: 44px; border-radius: 8px; display: grid; place-items: center; background: var(--light-blue); }
