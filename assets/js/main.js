@@ -2,7 +2,7 @@ const WF_PHONE = '18094222222';
 const WF_EMAIL = 'wanderfeetravel@gmail.com';
 const WF_INSTAGRAM = 'https://instagram.com/wanderfeettravel';
 const WF_BASE = '/wanderfeet-travel/';
-const WF_LEAD_ENDPOINT = '';
+const WF_LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzO2qp6WcUtZeLbIi--6zEnyID6HuZMiU-g9q6ZFkTf-8DyL9b-48VLCIaD9QUXZgeu6Q/exec';
 
 const navItems = [
   ['Inicio', WF_BASE],
