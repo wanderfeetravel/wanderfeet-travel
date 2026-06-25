@@ -1,7 +1,8 @@
-﻿const WF_PHONE = '18094222222';
+const WF_PHONE = '18094222222';
 const WF_EMAIL = 'wanderfeetravel@gmail.com';
 const WF_INSTAGRAM = 'https://instagram.com/wanderfeettravel';
 const WF_BASE = '/wanderfeet-travel/';
+const WF_LEAD_ENDPOINT = '';
 
 const navItems = [
   ['Inicio', WF_BASE],
@@ -221,6 +222,41 @@ function initVisaModals() {
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && modal.classList.contains('show')) close(); });
 }
 
+function initLeadCapture() {
+  const forms = document.querySelectorAll('#contactForm, #flightForm, #flightAssistForm, #hotelForm, #packageForm');
+  if (!forms.length) return;
+
+  forms.forEach((form) => {
+    if (!form.querySelector('.form-privacy-note')) {
+      form.insertAdjacentHTML('beforeend', `<p class="form-privacy-note">Tus datos se usan solo para responder esta solicitud. No realizamos pagos en la web ni guardamos información sensible en el navegador. Ver <a href="${WF_BASE}politica-privacidad/">Política de Privacidad</a>.</p>`);
+    }
+
+    form.addEventListener('submit', () => {
+      if (!WF_LEAD_ENDPOINT) return;
+      const fields = {};
+      form.querySelectorAll('input, select, textarea').forEach((field) => {
+        if (!field.id && !field.name) return;
+        if (field.type === 'password') return;
+        fields[field.id || field.name] = field.value;
+      });
+      const payload = {
+        form: form.id,
+        page: document.body.dataset.page || window.location.pathname,
+        path: window.location.pathname,
+        created_at: new Date().toISOString(),
+        fields
+      };
+      fetch(WF_LEAD_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+    }, { capture: true });
+  });
+}
+
 function initFlightForm() {
   const form = document.getElementById('flightForm');
   if (!form) return;
@@ -345,6 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppButtons();
   initHomeCarousel();
   initVisaModals();
+  initLeadCapture();
   initFlightForm();
   initContactForm();
   initGlobe();
