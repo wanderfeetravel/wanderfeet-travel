@@ -60,29 +60,37 @@ function initTravelerShopInquiry() {
 
 function initImageModal() {
   const COLOR_FILTERS = {
-    'negro':    'grayscale(1) brightness(0.38)',
-    'negra':    'grayscale(1) brightness(0.38)',
-    'miel':     'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
-    'azul':     'hue-rotate(195deg) saturate(1.5) brightness(0.88)',
-    'azul marino': 'hue-rotate(210deg) saturate(1.6) brightness(0.7)',
-    'gris':     'grayscale(0.75) brightness(0.9)',
-    'verde':    'hue-rotate(100deg) saturate(1.3) brightness(0.9)',
+    'negro':       'grayscale(1) brightness(0.38)',
+    'negra':       'grayscale(1) brightness(0.38)',
+    'miel':        'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
+    'azul':        'hue-rotate(195deg) saturate(1.5) brightness(0.88)',
+    'azul marino': 'hue-rotate(210deg) saturate(1.6) brightness(0.72)',
+    'gris':        'grayscale(0.75) brightness(0.9)',
+    'verde':       'hue-rotate(100deg) saturate(1.3) brightness(0.9)',
     'verde oliva': 'hue-rotate(85deg) saturate(0.9) brightness(0.75)',
-    'rosa':     'hue-rotate(310deg) saturate(1.5) brightness(1.05)',
-    'beige':    'sepia(0.45) saturate(0.8) brightness(1.18)',
-    'naranja':  'hue-rotate(28deg) saturate(2) brightness(1.05)',
-    'lavanda':  'hue-rotate(255deg) saturate(0.85) brightness(1.08)',
-    'blanco':   'grayscale(0.2) brightness(1.55) saturate(0.4)',
-    'rose gold':'hue-rotate(340deg) saturate(0.9) brightness(1.1) sepia(0.25)',
-    'cuero':    'sepia(0.55) saturate(1.6) hue-rotate(8deg) brightness(0.95)',
+    'rosa':        'hue-rotate(310deg) saturate(1.5) brightness(1.05)',
+    'beige':       'sepia(0.45) saturate(0.8) brightness(1.18)',
+    'naranja':     'hue-rotate(28deg) saturate(2) brightness(1.05)',
+    'lavanda':     'hue-rotate(255deg) saturate(0.85) brightness(1.08)',
+    'blanco':      'grayscale(0.2) brightness(1.55) saturate(0.4)',
+    'rose gold':   'hue-rotate(340deg) saturate(0.9) brightness(1.1) sepia(0.25)',
+    'cuero':       'sepia(0.55) saturate(1.6) hue-rotate(8deg) brightness(0.95)',
     'cuero negro': 'grayscale(1) brightness(0.32)',
     'cuero miel':  'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
-    'silicona': 'hue-rotate(180deg) saturate(1.2) brightness(1.0)',
+    'silicona':    'hue-rotate(180deg) saturate(1.2) brightness(1.0)',
   };
 
-  const getFilter = (variantName) => {
+  // Fallback filters when the variant name isn't a color (sizes, types, etc.)
+  const FALLBACK_FILTERS = [
+    'none',
+    'brightness(0.82) saturate(1.2) contrast(1.08)',
+    'brightness(1.12) saturate(0.78) hue-rotate(12deg)',
+    'sepia(0.3) brightness(0.95) saturate(1.1)',
+  ];
+
+  const getFilter = (variantName, index) => {
     const key = variantName.toLowerCase().trim();
-    return COLOR_FILTERS[key] || null;
+    return COLOR_FILTERS[key] || FALLBACK_FILTERS[index] || FALLBACK_FILTERS[0];
   };
 
   const modal = document.createElement('div');
@@ -115,7 +123,13 @@ function initImageModal() {
   const selectVariant = (variantName, filter, thumbEl) => {
     currentVariant = variantName;
     const mainImg = document.getElementById('imgViewerMain');
-    mainImg.style.filter = filter || 'none';
+    // Animate the filter change on the main image
+    mainImg.style.transition = 'filter 0.35s ease, transform 0.2s ease';
+    mainImg.style.transform = 'scale(0.97)';
+    setTimeout(() => {
+      mainImg.style.filter = filter;
+      mainImg.style.transform = 'scale(1)';
+    }, 80);
     document.getElementById('imgViewerVariantName').textContent = variantName;
     document.getElementById('imgViewerInterestLabel').textContent = variantName;
     document.querySelectorAll('.img-thumb').forEach((t) => t.classList.remove('active'));
@@ -136,21 +150,26 @@ function initImageModal() {
       const variants = variantSpans.map((s) => s.textContent.trim());
 
       document.getElementById('imgViewerTitle').textContent = title;
-      document.getElementById('imgViewerMain').src = img.src;
-      document.getElementById('imgViewerMain').alt = img.alt;
-      document.getElementById('imgViewerMain').style.filter = 'none';
+      const mainImg = document.getElementById('imgViewerMain');
+      mainImg.src = img.src;
+      mainImg.alt = img.alt;
+      mainImg.style.filter = 'none';
+      mainImg.style.transition = 'filter 0.35s ease, transform 0.2s ease';
 
       const thumbsContainer = document.getElementById('imgViewerThumbs');
       thumbsContainer.innerHTML = '';
 
       variants.forEach((v, i) => {
-        const filter = getFilter(v);
+        const filter = getFilter(v, i);
         const thumb = document.createElement('button');
         thumb.className = 'img-thumb';
         thumb.type = 'button';
         thumb.title = v;
-        thumb.innerHTML = `<img src="${img.src}" alt="${v}" style="filter:${filter || 'none'}" /><span>${v}</span>`;
-        if (i === 0) thumb.classList.add('active');
+        thumb.innerHTML = `<img src="${img.src}" alt="${v}" style="filter:${filter}" /><span>${v}</span>`;
+        if (i === 0) {
+          thumb.classList.add('active');
+          mainImg.style.filter = filter === 'none' ? 'none' : filter;
+        }
         thumb.addEventListener('click', () => selectVariant(v, filter, thumb));
         thumbsContainer.appendChild(thumb);
       });
