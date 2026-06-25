@@ -72,8 +72,21 @@
   grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr);
 }
 
+.vuelos-widget-panel {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
+}
+
 .vuelos-widget-panel .travel-widget {
   margin-top: 1rem;
+  min-height: 430px;
+  overflow: visible;
+}
+
+.vuelos-widget-panel .travel-widget iframe,
+.vuelos-widget-panel .travel-widget > div {
+  min-height: 430px !important;
 }
 
 .promo-side-panel {
@@ -179,6 +192,11 @@
   .vuelos-hero { padding: 8rem 0 3.5rem; }
   .vuelos-hero::after { background: linear-gradient(180deg, rgba(10,46,82,0.52) 0%, rgba(10,46,82,0.94) 72%, rgba(10,46,82,0.98) 100%); }
   .vuelos-carousel-dots { bottom: 1rem; right: 1rem; }
+  .vuelos-widget-panel .travel-widget,
+  .vuelos-widget-panel .travel-widget iframe,
+  .vuelos-widget-panel .travel-widget > div {
+    min-height: 520px !important;
+  }
   .offer-bottom { align-items: stretch; }
   .offer-bottom .btn { width: 100%; }
 }
