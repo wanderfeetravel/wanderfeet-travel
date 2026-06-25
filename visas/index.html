@@ -9,8 +9,10 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Asesoria de visas - WanderFeet Travel & Visa","provider":{"@type":"TravelAgency","name":"WanderFeet Travel & Visa","url":"https://wanderfeetravel.github.io/wanderfeet-travel/"},"serviceType":"Asesoria de visas"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/visas.css?v=2" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
   (function () {
     var script = document.createElement("script");
@@ -23,16 +25,23 @@
 <body data-page="visas">
   <div data-component="site-nav"></div>
 
-  <header class="page-hero">
-    <div class="container">
+  <header class="page-hero visas-hero">
+    <div class="visas-hero-bg visas-carousel" aria-hidden="true">
+      <img class="visas-slide active" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="visas-slide" src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="visas-slide" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="visas-slide" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80" alt="" />
+    </div>
+    <div class="container visas-hero-inner">
       <span class="section-tag">Visas</span>
-      <h1 class="page-title">Asesoria migratoria clara, responsable y humana.</h1>
-      <p class="page-desc">Te acompanamos en la preparacion, revision y organizacion documental. Cada caso se cotiza de forma privada segun destino, perfil y alcance del servicio.</p>
+      <h1 class="page-title">Asesoría migratoria clara, responsable y humana.</h1>
+      <p class="page-desc">Te acompañamos en la preparación, revisión y organización documental de tu proceso de visa.</p>
       <div class="page-actions">
         <a class="btn btn-primary" data-wa-message="Hola, quiero asesoria de visa con WanderFeet Travel & Visa.">Solicitar asesoria</a>
         <a class="btn btn-outline" href="#servicios-visas">Ver servicios</a>
       </div>
     </div>
+    <div class="visas-carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
   </header>
 
   <main>
@@ -41,7 +50,7 @@
         <div class="center reveal">
           <span class="section-tag">Servicios de visa</span>
           <h2 class="section-title">Elige el proceso que quieres revisar.</h2>
-          <p class="section-desc">Abrimos cada servicio en detalle para que entiendas que incluye antes de escribirnos. Los honorarios se manejan por consulta privada.</p>
+          <p class="section-desc">Cada servicio se enfoca en ordenar documentos, reducir errores y ayudarte a presentar un caso coherente.</p>
         </div>
 
         <div class="visa-grid">
@@ -129,37 +138,16 @@
     </section>
 
     <section class="section section-blue">
-      <div class="container">
-        <div class="center reveal">
-          <span class="section-tag">Despues de la visa</span>
-          <h2 class="section-title">Tambien podemos ayudarte a dar forma al viaje.</h2>
-          <p class="section-desc">Cuando ya tengas destino definido, podemos orientarte con vuelos, hoteles, tours y experiencias para que el viaje tenga sentido de principio a fin.</p>
+      <div class="container split">
+        <div class="reveal">
+          <span class="section-tag">Proceso</span>
+          <h2 class="section-title">Trabajamos tu solicitud por etapas.</h2>
+          <p class="section-desc">Primero entendemos tu perfil y objetivo de viaje. Luego organizamos documentos, revisamos coherencia y te orientamos sobre los siguientes pasos.</p>
         </div>
-
-        <div class="grid grid-3" style="margin-top:2.5rem">
-          <article class="card reveal">
-            <h3 class="card-title">Europa y Schengen</h3>
-            <p class="card-text">Rutas por varias ciudades, experiencias culturales, trenes, tours y hospedaje segun presupuesto.</p>
-            <a class="btn btn-small btn-sky" href="../paquetes/">Ver paquetes</a>
-          </article>
-          <article class="card reveal">
-            <h3 class="card-title">Canada</h3>
-            <p class="card-text">Planificacion por ciudad, temporada, actividades, traslados y hospedaje seguro.</p>
-            <a class="btn btn-small btn-sky" href="../hoteles/">Ver hoteles</a>
-          </article>
-          <article class="card reveal">
-            <h3 class="card-title">Estados Unidos</h3>
-            <p class="card-text">Viajes familiares, compras, parques, eventos, vuelos y asistencia de itinerario.</p>
-            <a class="btn btn-small btn-sky" href="../vuelos/">Ver vuelos</a>
-          </article>
-        </div>
-
-        <div class="widget-panel reveal" style="margin-top:2rem">
-          <h3 class="card-title">Tours y experiencias para complementar tu destino</h3>
-          <p class="card-text">Explora ideas de experiencias y luego nos escribes para ayudarte a integrarlas a tu plan de viaje.</p>
-          <div class="travel-widget">
-            <script async src="https://tpwdg.com/content?trs=542782&shmarker=742918&locale=en&powered_by=true&color_scheme=bg&header=%D0%9E%D1%82%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%20%D1%83%D0%BB%D1%83%D1%87%D1%88%D0%B8%D1%82%D1%8C%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D0%B5&b_counter=true&b_benefit=true&b_descr=true&b_about=true&b_map=true&b_reviews=true&b_breadcrumbs=true&b_poweredby=true&b_numbers=true&b_trustpilot=true&b_assortment=true&b_reliable=true&b_extended=true&b_how=true&b_faq=true&b_why=true&b_easybook=true&campaign_id=22&promo_id=1504" charset="utf-8"></script>
-          </div>
+        <div class="consult-panel reveal">
+          <div><strong>1</strong><span>Evaluación inicial del caso.</span></div>
+          <div><strong>2</strong><span>Lista y revisión documental.</span></div>
+          <div><strong>3</strong><span>Preparación final antes de someter.</span></div>
         </div>
       </div>
     </section>
@@ -196,5 +184,6 @@
   <div data-component="site-footer"></div>
   <div data-component="whatsapp-float"></div>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/visas.js"></script>
 </body>
 </html>
