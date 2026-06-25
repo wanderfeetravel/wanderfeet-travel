@@ -17,6 +17,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="../assets/css/traveler-shop.css" />
@@ -33,13 +34,22 @@
   <div data-component="site-nav"></div>
 
   <header class="page-hero shop-hero">
-    <div class="container">
-      <span class="section-tag">Traveler Shop</span>
-      <h1 class="page-title">Traveler Shop by WanderFeet</h1>
-      <p class="page-desc">Catálogo curado de artículos esenciales para viajar cómodo, organizado y seguro. Por ahora trabajamos bajo solicitud: eliges lo que te interesa y confirmamos disponibilidad, precio y entrega por WhatsApp.</p>
-      <div class="page-actions">
-        <a class="btn btn-primary" href="#kits">Ver kits recomendados</a>
-        <a class="btn btn-outline" href="#productos">Ver productos</a>
+    <div class="container shop-hero-inner">
+      <div class="shop-hero-copy">
+        <span class="section-tag">Traveler Shop</span>
+        <h1 class="page-title">Traveler Shop by WanderFeet</h1>
+        <p class="page-desc">Catálogo curado de artículos esenciales para viajar cómodo, organizado y seguro. Por ahora trabajamos bajo solicitud: eliges lo que te interesa y confirmamos disponibilidad, precio y entrega por WhatsApp.</p>
+        <div class="page-actions">
+          <a class="btn btn-primary" href="#kits">Ver kits recomendados</a>
+          <a class="btn btn-outline" href="#productos">Ver productos</a>
+        </div>
+      </div>
+      <div class="shop-hero-visual" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=900&q=80" alt="" />
+        <div class="shop-hero-card">
+          <span>Catálogo curado</span>
+          <strong>Kits para viajar mejor</strong>
+        </div>
       </div>
     </div>
   </header>
@@ -55,35 +65,47 @@
 
         <div class="kit-grid">
           <article class="kit-card reveal">
-            <span class="shop-status">Más consultado</span>
-            <h3 class="card-title">Kit Primer Viaje Internacional</h3>
-            <p class="card-text">Para quien quiere salir preparado desde el aeropuerto hasta el destino.</p>
-            <ul class="shop-list"><li>Porta pasaporte</li><li>Adaptador universal</li><li>Organizadores de maleta</li><li>Etiqueta de equipaje</li></ul>
-            <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Primer Viaje Internacional">Me interesa</button>
+            <img class="kit-card-img" src="../assets/img/shop/porta-pasaportes.png" alt="Kit primer viaje internacional con porta pasaporte y accesorios" />
+            <div class="kit-card-body">
+              <span class="shop-status">Más consultado</span>
+              <h3 class="card-title">Kit Primer Viaje Internacional</h3>
+              <p class="card-text">Para quien quiere salir preparado desde el aeropuerto hasta el destino.</p>
+              <ul class="shop-list"><li>Porta pasaporte</li><li>Adaptador universal</li><li>Organizadores de maleta</li><li>Etiqueta de equipaje</li></ul>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Primer Viaje Internacional">Me interesa</button>
+            </div>
           </article>
 
           <article class="kit-card reveal">
-            <span class="shop-status">Visa ready</span>
-            <h3 class="card-title">Kit Visa & Documentos</h3>
-            <p class="card-text">Pensado para organizar pasaporte, reservas, expediente y papeles importantes.</p>
-            <ul class="shop-list"><li>Porta pasaporte</li><li>Organizador de documentos</li><li>Folder para expediente</li><li>Etiqueta de equipaje</li></ul>
-            <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Visa & Documentos">Me interesa</button>
+            <img class="kit-card-img" src="../assets/img/visas/documentos-asesoria.png" alt="Kit para organizar documentos de viaje y visa" />
+            <div class="kit-card-body">
+              <span class="shop-status">Visa ready</span>
+              <h3 class="card-title">Kit Visa & Documentos</h3>
+              <p class="card-text">Pensado para organizar pasaporte, reservas, expediente y papeles importantes.</p>
+              <ul class="shop-list"><li>Porta pasaporte</li><li>Organizador de documentos</li><li>Folder para expediente</li><li>Etiqueta de equipaje</li></ul>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Visa & Documentos">Me interesa</button>
+            </div>
           </article>
 
           <article class="kit-card reveal">
-            <span class="shop-status">Cabina</span>
-            <h3 class="card-title">Kit Solo Carry-On</h3>
-            <p class="card-text">Para viajar liviano, ahorrar espacio y evitar sorpresas con el peso.</p>
-            <ul class="shop-list"><li>Packing cubes</li><li>Báscula digital</li><li>Bolsa para zapatos</li><li>Neceser transparente</li></ul>
-            <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Solo Carry-On">Me interesa</button>
+            <img class="kit-card-img" src="../assets/img/shop/organizadores-maleta.png" alt="Kit solo carry-on con organizadores de maleta" />
+            <div class="kit-card-body">
+              <span class="shop-status">Cabina</span>
+              <h3 class="card-title">Kit Solo Carry-On</h3>
+              <p class="card-text">Para viajar liviano, ahorrar espacio y evitar sorpresas con el peso.</p>
+              <ul class="shop-list"><li>Packing cubes</li><li>Báscula digital</li><li>Bolsa para zapatos</li><li>Neceser transparente</li></ul>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Solo Carry-On">Me interesa</button>
+            </div>
           </article>
 
           <article class="kit-card reveal">
-            <span class="shop-status">Europa</span>
-            <h3 class="card-title">Kit Europa</h3>
-            <p class="card-text">Accesorios prácticos para viajes multidestino, trenes, hoteles y cabina.</p>
-            <ul class="shop-list"><li>Adaptador universal</li><li>Candado TSA</li><li>Packing cubes</li><li>Porta documentos</li></ul>
-            <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Europa">Me interesa</button>
+            <img class="kit-card-img" src="../assets/img/shop/adaptadores-universales.png" alt="Kit Europa con adaptador universal y accesorios" />
+            <div class="kit-card-body">
+              <span class="shop-status">Europa</span>
+              <h3 class="card-title">Kit Europa</h3>
+              <p class="card-text">Accesorios prácticos para viajes multidestino, trenes, hoteles y cabina.</p>
+              <ul class="shop-list"><li>Adaptador universal</li><li>Candado TSA</li><li>Packing cubes</li><li>Porta documentos</li></ul>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Europa">Me interesa</button>
+            </div>
           </article>
         </div>
       </div>
