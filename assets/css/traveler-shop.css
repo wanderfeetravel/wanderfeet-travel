@@ -282,3 +282,70 @@
 @media (prefers-reduced-motion: reduce) {
   .shop-carousel .shop-slide { transition: none; transform: none; }
 }
+
+/* ── Category filter bar ── */
+.shop-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 0.75rem;
+}
+.shop-filter {
+  background: none;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.shop-filter:hover { background: var(--navy); color: var(--white); }
+.shop-filter.active { background: var(--navy); color: var(--white); }
+.shop-count {
+  font-size: 0.8rem;
+  color: var(--muted, #6b7280);
+  margin: 0 0 1.5rem;
+}
+
+/* ── Product card image wrap + category badge ── */
+.shop-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.shop-card-img-wrap img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.shop-card:hover .shop-card-img-wrap img { transform: scale(1.04); }
+.cat-badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: rgba(10,46,82,0.82);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+}
+
+/* catalog grid replaces the old shop-grid sizing */
+.catalog-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+.shop-card.cat-hidden { display: none !important; }
+
+@media (max-width: 640px) {
+  .shop-filter-bar { gap: 0.4rem; }
+  .shop-filter { font-size: 0.78rem; padding: 0.38rem 0.8rem; }
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
