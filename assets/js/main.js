@@ -37,6 +37,7 @@ function mountNav() {
         </a>
         <ul class="nav-links" id="navLinks">${links}</ul>
         <a class="btn btn-primary btn-small nav-cta" href="${waLink('Hola, quiero solicitar asesoría con WanderFeet Travel & Visa.')}" target="_blank" rel="noopener">WhatsApp</a>
+        <div class="lang-switcher" id="langSwitcher"><button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button><div class="lang-dropdown" id="langDropdown" aria-hidden="true"><button class="lang-option" data-lang="es">🇩🇴 Español</button><button class="lang-option" data-lang="en">🇺🇸 English</button><button class="lang-option" data-lang="fr">🇫🇷 Français</button></div></div>
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>`;
@@ -386,4 +387,59 @@ document.addEventListener('DOMContentLoaded', () => {
   initFlightForm();
   initContactForm();
   initGlobe();
+  initGoogleTranslate();
+  initLangSwitcher();
 });
+
+function initGoogleTranslate() {
+  const container = document.createElement('div');
+  container.id = 'google_translate_element';
+  container.style.cssText = 'position:absolute;visibility:hidden;height:0;overflow:hidden;';
+  document.body.appendChild(container);
+  window.googleTranslateElementInit = function () {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en,fr',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+  const script = document.createElement('script');
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  document.head.appendChild(script);
+}
+
+function initLangSwitcher() {
+  const toggle = document.getElementById('langToggle');
+  const dropdown = document.getElementById('langDropdown');
+  if (!toggle || !dropdown) return;
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = dropdown.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    dropdown.setAttribute('aria-hidden', String(!open));
+  });
+  document.addEventListener('click', () => {
+    dropdown.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    dropdown.setAttribute('aria-hidden', 'true');
+  });
+  dropdown.querySelectorAll('.lang-option').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = btn.dataset.lang;
+      const tryTranslate = (attempts = 0) => {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        } else if (attempts < 20) {
+          setTimeout(() => tryTranslate(attempts + 1), 300);
+        }
+      };
+      tryTranslate();
+      dropdown.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
