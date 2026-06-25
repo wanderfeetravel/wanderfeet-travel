@@ -1,0 +1,188 @@
+.vuelos-hero {
+  position: relative;
+  padding: 9rem 0 4.5rem;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.vuelos-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(10,46,82,0.94) 0%, rgba(10,46,82,0.78) 50%, rgba(10,46,82,0.42) 100%);
+  pointer-events: none;
+}
+
+.vuelos-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.vuelos-carousel .vuelos-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.8s ease, transform 4.8s ease;
+}
+
+.vuelos-carousel .vuelos-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vuelos-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+}
+
+.vuelos-hero .page-title,
+.vuelos-hero .page-desc {
+  text-shadow: 0 8px 26px rgba(0,0,0,0.28);
+}
+
+.vuelos-carousel-dots {
+  position: absolute;
+  right: max(1.5rem, calc((100vw - 1120px) / 2 + 1.5rem));
+  bottom: 1.6rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.38rem;
+}
+
+.vuelos-carousel-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+}
+
+.vuelos-carousel-dots span.active { background: var(--gold); }
+
+.vuelos-widget-grid {
+  grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr);
+}
+
+.vuelos-widget-panel .travel-widget {
+  margin-top: 1rem;
+}
+
+.promo-side-panel {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f2f8ff 100%);
+}
+
+.promo-side-panel.accent {
+  background: linear-gradient(145deg, #fffaf0 0%, #ffffff 100%);
+}
+
+.offer-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 28px;
+  padding: 0.28rem 0.78rem;
+  border-radius: 999px;
+  background: #fff3db;
+  color: var(--navy);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.flight-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.flight-offer-card {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 4px 14px rgba(10,46,82,0.05);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.flight-offer-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(30,136,229,0.2);
+  box-shadow: var(--shadow);
+}
+
+.flight-offer-card.featured {
+  border-color: rgba(245,166,35,0.42);
+  background: linear-gradient(145deg, #ffffff 0%, #fff8ea 100%);
+}
+
+.flight-offer-card .card-title {
+  margin-top: 0.8rem;
+}
+
+.offer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.offer-price {
+  color: var(--navy);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.98rem;
+}
+
+.vuelos-split {
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+}
+
+#cotizar-vuelo {
+  position: sticky;
+  top: 92px;
+}
+
+@media (max-width: 980px) {
+  .vuelos-hero::after { background: linear-gradient(90deg, rgba(10,46,82,0.94) 0%, rgba(10,46,82,0.82) 70%, rgba(10,46,82,0.62) 100%); }
+  .vuelos-widget-grid,
+  .vuelos-split { grid-template-columns: 1fr; }
+  #cotizar-vuelo { position: static; }
+}
+
+@media (max-width: 720px) {
+  .flight-offer-grid { grid-template-columns: 1fr; }
+  .flight-offer-card { min-height: 0; }
+}
+
+@media (max-width: 640px) {
+  .vuelos-hero { padding: 8rem 0 3.5rem; }
+  .vuelos-hero::after { background: linear-gradient(180deg, rgba(10,46,82,0.52) 0%, rgba(10,46,82,0.94) 72%, rgba(10,46,82,0.98) 100%); }
+  .vuelos-carousel-dots { bottom: 1rem; right: 1rem; }
+  .offer-bottom { align-items: stretch; }
+  .offer-bottom .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vuelos-carousel .vuelos-slide { transition: none; transform: none; }
+}
