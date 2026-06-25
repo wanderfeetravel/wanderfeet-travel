@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vuelos | WanderFeet Travel & Visa</title>
-  <meta name="description" content="Búsqueda de vuelos, gestión de compra y enlace aliado de Kiwi desde WanderFeet Travel & Visa." />
+  <title>Vuelos, seguros y asistencia | WanderFeet Travel & Visa</title>
+  <meta name="description" content="Busca vuelos con aliados, solicita cotizaciones personalizadas, gestión de compra y asistencia con seguro de viaje desde WanderFeet Travel & Visa." />
   <link rel="canonical" href="https://wanderfeetravel.github.io/wanderfeet-travel/vuelos/" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Búsqueda y gestión de vuelos",
+    "name": "Búsqueda de vuelos, seguros y gestión de compra",
     "provider": {
       "@type": "TravelAgency",
       "name": "WanderFeet Travel & Visa"
     },
-    "serviceType": "Vuelos"
+    "serviceType": ["Vuelos", "Seguro de viaje", "Gestión de compra"]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/vuelos.css?v=2" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
   (function () {
     var script = document.createElement("script");
@@ -34,16 +36,23 @@
 <body data-page="vuelos">
   <div data-component="site-nav"></div>
 
-  <header class="page-hero">
-    <div class="container">
+  <header class="page-hero vuelos-hero">
+    <div class="vuelos-hero-bg vuelos-carousel" aria-hidden="true">
+      <img class="vuelos-slide active" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="vuelos-slide" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="vuelos-slide" src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="vuelos-slide" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=80" alt="" />
+    </div>
+    <div class="container vuelos-hero-inner">
       <span class="section-tag">Vuelos</span>
-      <h1 class="page-title">Búsqueda de vuelos y gestión de compra.</h1>
-      <p class="page-desc">Comparamos opciones según fechas, equipaje, escalas, presupuesto y preferencias del viajero.</p>
+      <h1 class="page-title">Vuelos, seguros y asistencia para viajar mejor.</h1>
+      <p class="page-desc">Explora tarifas con aliados, solicita una cotización privada y organiza extras importantes antes de comprar.</p>
       <div class="page-actions">
         <a class="btn btn-primary" href="https://kiwi.tpx.gr/umeGwDRi" target="_blank" rel="noopener">Buscar vuelos con Kiwi</a>
-        <a class="btn btn-outline" href="#cotizar-vuelo">Cotización personalizada</a>
+        <a class="btn btn-outline" href="#cotizar-vuelo">Solicitar asistencia</a>
       </div>
     </div>
+    <div class="vuelos-carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
   </header>
 
   <main>
@@ -51,27 +60,32 @@
       <div class="container">
         <div class="center reveal">
           <span class="section-tag">Buscador aliado</span>
-          <h2 class="section-title">Explora vuelos en la página o abre Kiwi directamente.</h2>
-          <p class="section-desc">El botón directo es la ruta más simple para comprar. El widget queda como apoyo visual para comparar opciones sin salir primero de WanderFeet.</p>
+          <h2 class="section-title">Compara opciones y luego decide cómo comprar.</h2>
+          <p class="section-desc">Puedes revisar tarifas disponibles con Kiwi o pedirnos ayuda para comparar escalas, equipaje, horarios, condiciones y seguro de viaje.</p>
         </div>
 
-        <div class="widget-stack reveal">
-          <div class="widget-panel">
+        <div class="widget-grid vuelos-widget-grid reveal">
+          <div class="widget-panel vuelos-widget-panel">
             <h3 class="card-title">Buscador de vuelos</h3>
-            <p class="card-text">Widget activo de Travelpayouts con tus parámetros de seguimiento: trs 542782 y shmarker 742918.</p>
+            <p class="card-text">Explora rutas, fechas y combinaciones de aerolíneas desde nuestro buscador aliado.</p>
             <div class="travel-widget">
               <script async src="https://tpwdg.com/content?currency=usd&trs=542782&shmarker=742918&locale=en&stops=any&show_hotels=true&powered_by=true&border_radius=0&plain=true&color_button=%2300A991&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
             </div>
           </div>
 
-          <div class="widget-panel">
-            <h3 class="card-title">Acción recomendada</h3>
-            <p class="card-text">Si ya sabes fechas y destino, abre Kiwi directamente para reducir pasos. Si quieres que revisemos escalas, equipaje o condiciones, usa el formulario de WhatsApp.</p>
-            <div class="mini-link-row">
-              <a class="btn btn-small btn-sky" href="https://kiwi.tpx.gr/umeGwDRi" target="_blank" rel="noopener">Abrir Kiwi</a>
-              <a class="btn btn-small btn-navy" href="#cotizar-vuelo">Pedir revisión</a>
-            </div>
-          </div>
+          <aside class="widget-panel promo-side-panel">
+            <span class="offer-badge">Oferta activa</span>
+            <h3 class="card-title">Vuelo + revisión previa</h3>
+            <p class="card-text">Antes de pagar, podemos revisar datos, equipaje, escalas y condiciones importantes del boleto.</p>
+            <a class="btn btn-small btn-navy" href="#cotizar-vuelo">Pedir revisión</a>
+          </aside>
+
+          <aside class="widget-panel promo-side-panel accent">
+            <span class="offer-badge">Extra recomendado</span>
+            <h3 class="card-title">Seguro de viaje</h3>
+            <p class="card-text">Solicita una cotización junto con tu vuelo si tu destino, visa o itinerario lo requiere.</p>
+            <a class="btn btn-small btn-primary" href="#cotizar-vuelo">Cotizar seguro</a>
+          </aside>
         </div>
 
         <div class="notice reveal" style="margin-top:1.5rem">Kiwi es un proveedor externo. Las tarifas, disponibilidad, políticas y condiciones dependen del aliado y de las aerolíneas. WanderFeet puede ayudarte a revisar antes de comprar.</div>
@@ -79,37 +93,77 @@
     </section>
 
     <section class="section">
-      <div class="container split">
+      <div class="container split vuelos-split">
         <div class="reveal">
-          <span class="section-tag">Opciones</span>
-          <h2 class="section-title">Elige cómo quieres buscar tu vuelo.</h2>
-          <p class="section-desc">Puedes explorar tarifas directamente con nuestro aliado Kiwi o pedirnos una búsqueda personalizada por WhatsApp.</p>
+          <span class="section-tag">Promociones</span>
+          <h2 class="section-title">Opciones pensadas para comprar con más claridad.</h2>
+          <p class="section-desc">Estas opciones pueden cambiar según temporada, disponibilidad y necesidades del viaje.</p>
 
-          <div class="grid" style="margin-top:2rem">
-            <article class="card">
-              <span class="placeholder-badge">Aliado activo</span>
-              <h3 class="card-title">Buscar vuelos con Kiwi</h3>
-              <p class="card-text">Compara rutas, fechas y tarifas disponibles desde una plataforma externa especializada en vuelos.</p>
-              <a class="btn btn-small btn-sky" href="https://kiwi.tpx.gr/umeGwDRi" target="_blank" rel="noopener">Abrir buscador</a>
+          <div class="flight-offer-grid">
+            <article class="flight-offer-card featured">
+              <div>
+                <span class="offer-badge">Más solicitado</span>
+                <h3 class="card-title">Búsqueda personalizada</h3>
+                <p class="card-text">Te organizamos alternativas para comparar fechas, escalas, equipaje y presupuesto.</p>
+              </div>
+              <div class="offer-bottom">
+                <span class="offer-price">Desde RD$600</span>
+                <a class="btn btn-small btn-navy" href="#cotizar-vuelo">Solicitar</a>
+              </div>
             </article>
-            <article class="card">
-              <h3 class="card-title">Búsqueda personalizada</h3>
-              <p class="card-text">Te enviamos opciones organizadas para que puedas comparar con facilidad.</p>
-              <span class="price">Desde RD$600</span>
+
+            <article class="flight-offer-card">
+              <div>
+                <span class="offer-badge">Compra asistida</span>
+                <h3 class="card-title">Gestión de compra</h3>
+                <p class="card-text">Acompañamiento para revisar datos, condiciones, equipaje y pasos antes de emitir.</p>
+              </div>
+              <div class="offer-bottom">
+                <span class="offer-price">Desde RD$1,200</span>
+                <a class="btn btn-small btn-navy" href="#cotizar-vuelo">Solicitar</a>
+              </div>
             </article>
-            <article class="card">
-              <h3 class="card-title">Gestión de compra</h3>
-              <p class="card-text">Acompañamiento para revisar condiciones, datos, equipaje y compra del boleto.</p>
-              <span class="price">Desde RD$1,200</span>
+
+            <article class="flight-offer-card">
+              <div>
+                <span class="offer-badge">Por temporada</span>
+                <h3 class="card-title">Vuelo + seguro de viaje</h3>
+                <p class="card-text">Cotización combinada para viajeros que quieren salir con asistencia y respaldo.</p>
+              </div>
+              <div class="offer-bottom">
+                <span class="offer-price">Cotización privada</span>
+                <a class="btn btn-small btn-navy" href="#cotizar-vuelo">Cotizar</a>
+              </div>
+            </article>
+
+            <article class="flight-offer-card">
+              <div>
+                <span class="offer-badge">Fechas flexibles</span>
+                <h3 class="card-title">Alerta de tarifa</h3>
+                <p class="card-text">Revisamos ventanas de viaje y alternativas cuando puedes ajustar algunos días.</p>
+              </div>
+              <div class="offer-bottom">
+                <span class="offer-price">Según destino</span>
+                <a class="btn btn-small btn-navy" href="#cotizar-vuelo">Consultar</a>
+              </div>
             </article>
           </div>
-
-          <div class="notice" style="margin-top:1.5rem">Para conversión, el botón directo a Kiwi es la acción principal. El formulario de WanderFeet queda para clientes que prefieren asistencia humana.</div>
         </div>
 
         <div class="form-card reveal" id="cotizar-vuelo">
-          <h2 class="form-title">Solicitar cotización de vuelo</h2>
-          <form id="flightForm">
+          <h2 class="form-title">Solicitar cotización de viaje</h2>
+          <form id="flightAssistForm">
+            <div class="form-group">
+              <label for="q_interest">Servicio de interés</label>
+              <select id="q_interest">
+                <option>Cotización de vuelo</option>
+                <option>Vuelo + seguro de viaje</option>
+                <option>Solo seguro de viaje</option>
+                <option>Gestión de compra</option>
+                <option>Paquete de viaje</option>
+                <option>Otro</option>
+              </select>
+            </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="q_name">Nombre</label>
@@ -161,8 +215,12 @@
               </div>
             </div>
             <div class="form-group">
+              <label for="q_budget">Presupuesto aproximado</label>
+              <input id="q_budget" placeholder="Ej. RD$45,000 por persona" />
+            </div>
+            <div class="form-group">
               <label for="q_notes">Notas</label>
-              <textarea id="q_notes" placeholder="Escalas, equipaje, horarios preferidos..."></textarea>
+              <textarea id="q_notes" placeholder="Escalas, equipaje, horarios, seguro, flexibilidad de fechas..."></textarea>
             </div>
             <button class="btn btn-navy form-submit" type="submit">Enviar solicitud por WhatsApp</button>
           </form>
@@ -174,5 +232,6 @@
   <div data-component="site-footer"></div>
   <div data-component="whatsapp-float"></div>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/vuelos.js?v=2"></script>
 </body>
 </html>
