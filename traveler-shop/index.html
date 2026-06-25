@@ -44,12 +44,16 @@
           <a class="btn btn-outline" href="#productos">Ver productos</a>
         </div>
       </div>
-      <div class="shop-hero-visual" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=900&q=80" alt="" />
+      <div class="shop-hero-visual shop-carousel" aria-label="Viajeros en distintos destinos">
+        <img class="shop-slide active" src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=900&q=80" alt="Viajeros caminando con equipaje en una ciudad europea" />
+        <img class="shop-slide" src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80" alt="Pareja de viajeros mirando un destino de montaña" />
+        <img class="shop-slide" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Viajero preparando su maleta antes del viaje" />
+        <img class="shop-slide" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80" alt="Viajeros consultando mapa y accesorios de viaje" />
         <div class="shop-hero-card">
           <span>Catálogo curado</span>
           <strong>Kits para viajar mejor</strong>
         </div>
+        <div class="shop-carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
       </div>
     </div>
   </header>
@@ -64,45 +68,49 @@
         </div>
 
         <div class="kit-grid">
-          <article class="kit-card reveal">
+          <article class="kit-card kit-warm reveal">
             <img class="kit-card-img" src="../assets/img/shop/porta-pasaportes.png" alt="Kit primer viaje internacional con porta pasaporte y accesorios" />
             <div class="kit-card-body">
               <span class="shop-status">Más consultado</span>
               <h3 class="card-title">Kit Primer Viaje Internacional</h3>
               <p class="card-text">Para quien quiere salir preparado desde el aeropuerto hasta el destino.</p>
+              <div class="variant-row"><span>Negro</span><span>Miel</span><span>Azul</span></div>
               <ul class="shop-list"><li>Porta pasaporte</li><li>Adaptador universal</li><li>Organizadores de maleta</li><li>Etiqueta de equipaje</li></ul>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Primer Viaje Internacional">Me interesa</button>
             </div>
           </article>
 
-          <article class="kit-card reveal">
+          <article class="kit-card kit-paper reveal">
             <img class="kit-card-img" src="../assets/img/visas/documentos-asesoria.png" alt="Kit para organizar documentos de viaje y visa" />
             <div class="kit-card-body">
               <span class="shop-status">Visa ready</span>
               <h3 class="card-title">Kit Visa & Documentos</h3>
               <p class="card-text">Pensado para organizar pasaporte, reservas, expediente y papeles importantes.</p>
+              <div class="variant-row"><span>Folder</span><span>Sobre</span><span>Case</span></div>
               <ul class="shop-list"><li>Porta pasaporte</li><li>Organizador de documentos</li><li>Folder para expediente</li><li>Etiqueta de equipaje</li></ul>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Visa & Documentos">Me interesa</button>
             </div>
           </article>
 
-          <article class="kit-card reveal">
+          <article class="kit-card kit-green reveal">
             <img class="kit-card-img" src="../assets/img/shop/organizadores-maleta.png" alt="Kit solo carry-on con organizadores de maleta" />
             <div class="kit-card-body">
               <span class="shop-status">Cabina</span>
               <h3 class="card-title">Kit Solo Carry-On</h3>
               <p class="card-text">Para viajar liviano, ahorrar espacio y evitar sorpresas con el peso.</p>
+              <div class="variant-row"><span>Gris</span><span>Verde</span><span>Rosa</span></div>
               <ul class="shop-list"><li>Packing cubes</li><li>Báscula digital</li><li>Bolsa para zapatos</li><li>Neceser transparente</li></ul>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Solo Carry-On">Me interesa</button>
             </div>
           </article>
 
-          <article class="kit-card reveal">
+          <article class="kit-card kit-sunset reveal">
             <img class="kit-card-img" src="../assets/img/shop/adaptadores-universales.png" alt="Kit Europa con adaptador universal y accesorios" />
             <div class="kit-card-body">
               <span class="shop-status">Europa</span>
               <h3 class="card-title">Kit Europa</h3>
               <p class="card-text">Accesorios prácticos para viajes multidestino, trenes, hoteles y cabina.</p>
+              <div class="variant-row"><span>EU</span><span>UK</span><span>Multi</span></div>
               <ul class="shop-list"><li>Adaptador universal</li><li>Candado TSA</li><li>Packing cubes</li><li>Porta documentos</li></ul>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Kit Europa">Me interesa</button>
             </div>
@@ -126,6 +134,7 @@
               <span class="shop-status">Bajo pedido</span>
               <h2 class="card-title">Porta pasaporte premium</h2>
               <p class="card-text">Protección y orden para pasaporte, boarding pass y documentos esenciales.</p>
+              <div class="variant-row"><span>Negro</span><span>Miel</span><span>Azul</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Porta pasaporte premium">Me interesa</button>
             </div>
           </article>
@@ -136,6 +145,7 @@
               <span class="shop-status">Top para cabina</span>
               <h2 class="card-title">Packing cubes</h2>
               <p class="card-text">Organizadores para separar ropa, ahorrar espacio y desempacar más rápido.</p>
+              <div class="variant-row"><span>6 piezas</span><span>Compresión</span><span>XL</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Packing cubes">Me interesa</button>
             </div>
           </article>
@@ -146,6 +156,7 @@
               <span class="shop-status">Internacional</span>
               <h2 class="card-title">Adaptador universal</h2>
               <p class="card-text">Conectividad para distintos destinos, enchufes y dispositivos.</p>
+              <div class="variant-row"><span>USB</span><span>USB-C</span><span>Multi</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Adaptador universal">Me interesa</button>
             </div>
           </article>
@@ -156,6 +167,7 @@
               <span class="shop-status">Seguridad</span>
               <h2 class="card-title">Candado TSA</h2>
               <p class="card-text">Seguridad práctica para equipaje facturado, cabina y mochilas.</p>
+              <div class="variant-row"><span>Clave</span><span>Llave</span><span>Set x2</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Candado TSA">Me interesa</button>
             </div>
           </article>
@@ -166,6 +178,7 @@
               <span class="shop-status">Ahorra cargos</span>
               <h2 class="card-title">Báscula de equipaje</h2>
               <p class="card-text">Evita cargos por exceso de peso antes de llegar al aeropuerto.</p>
+              <div class="variant-row"><span>Digital</span><span>Compacta</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Báscula de equipaje">Me interesa</button>
             </div>
           </article>
@@ -176,6 +189,7 @@
               <span class="shop-status">Personal item</span>
               <h2 class="card-title">Mochila de viaje</h2>
               <p class="card-text">Mochila funcional para cabina, trabajo remoto y escapadas cortas.</p>
+              <div class="variant-row"><span>Negra</span><span>Antirrobo</span><span>USB</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Mochila de viaje">Me interesa</button>
             </div>
           </article>
@@ -186,6 +200,7 @@
               <span class="shop-status">Cabina</span>
               <h2 class="card-title">Bolso de mano</h2>
               <p class="card-text">Opciones prácticas para fines de semana, cabina y viajes cortos.</p>
+              <div class="variant-row"><span>Beige</span><span>Negro</span><span>Waterproof</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Bolso de mano">Me interesa</button>
             </div>
           </article>
@@ -196,9 +211,74 @@
               <span class="shop-status">Orden tech</span>
               <h2 class="card-title">Organizador de cables</h2>
               <p class="card-text">Para guardar cargadores, adaptadores, audífonos y accesorios pequeños.</p>
+              <div class="variant-row"><span>Mini</span><span>Doble</span><span>Rigido</span></div>
               <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Organizador de cables">Me interesa</button>
             </div>
           </article>
+
+          <article class="shop-card reveal tech-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="Audífonos compactos para viaje" />
+            <div class="shop-card-body">
+              <span class="shop-status">Tech básico</span>
+              <h2 class="card-title">Audífonos compactos</h2>
+              <p class="card-text">Para vuelos, traslados y llamadas durante el viaje.</p>
+              <div class="variant-row"><span>Negro</span><span>Blanco</span><span>Bluetooth</span></div>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Audífonos compactos">Me interesa</button>
+            </div>
+          </article>
+
+          <article class="shop-card reveal tech-card">
+            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=700&q=80" alt="Cables de carga para teléfono" />
+            <div class="shop-card-body">
+              <span class="shop-status">Carga</span>
+              <h2 class="card-title">Cables de carga</h2>
+              <p class="card-text">Cables extra para celular, power bank, aeropuerto y hotel.</p>
+              <div class="variant-row"><span>USB-C</span><span>Lightning</span><span>3 en 1</span></div>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Cables de carga">Me interesa</button>
+            </div>
+          </article>
+
+          <article class="shop-card reveal tech-card">
+            <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=700&q=80" alt="Power bank compacto para viaje" />
+            <div class="shop-card-body">
+              <span class="shop-status">Energía</span>
+              <h2 class="card-title">Power bank compacto</h2>
+              <p class="card-text">Batería portátil para días largos, escalas y tours.</p>
+              <div class="variant-row"><span>10k</span><span>20k</span><span>USB-C</span></div>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Power bank compacto">Me interesa</button>
+            </div>
+          </article>
+
+          <article class="shop-card reveal tech-card">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=700&q=80" alt="Soporte de celular para viaje" />
+            <div class="shop-card-body">
+              <span class="shop-status">Comodidad</span>
+              <h2 class="card-title">Soporte de celular</h2>
+              <p class="card-text">Útil para vuelos, videollamadas, mapas y contenido durante el viaje.</p>
+              <div class="variant-row"><span>Flexible</span><span>Mesa</span><span>Compacto</span></div>
+              <button class="btn btn-small btn-navy shop-interest" type="button" data-product="Soporte de celular">Me interesa</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container split esim-section">
+        <div class="reveal">
+          <span class="section-tag">Conectividad de viaje</span>
+          <h2 class="section-title">eSIM internacional como complemento, no como distracción.</h2>
+          <p class="section-desc">Si el viajero necesita internet antes de salir o al llegar al destino, puede explorar opciones de eSIM desde este bloque. Para dudas, también podemos orientarle por WhatsApp.</p>
+          <div class="page-actions">
+            <a class="btn btn-primary" href="https://yesim.tpx.gr/cbebFUhd" target="_blank" rel="noopener">Ver eSIM</a>
+            <a class="btn btn-navy" data-wa-message="Hola, quiero orientación sobre eSIM internacional con WanderFeet Travel & Visa.">Consultar eSIM</a>
+          </div>
+        </div>
+        <div class="widget-panel esim-widget reveal">
+          <h3 class="card-title">Opciones de eSIM</h3>
+          <div class="travel-widget travel-widget-compact">
+            <script async src="https://tpwdg.com/content?trs=542782&shmarker=742918&locale=en&powered_by=true&color_button=%23f2685f&color_focused=%23f2685f&secondary=%23FFFFFF&dark=%2311100f&light=%23FFFFFF&special=%23C4C4C4&border_radius=5&plain=false&no_labels=true&promo_id=8588&campaign_id=541" charset="utf-8"></script>
+          </div>
         </div>
       </div>
     </section>
@@ -260,6 +340,10 @@
               <option>Mochila de viaje</option>
               <option>Bolso de mano</option>
               <option>Organizador de cables</option>
+              <option>Audífonos compactos</option>
+              <option>Cables de carga</option>
+              <option>Power bank compacto</option>
+              <option>Soporte de celular</option>
             </select>
           </div>
           <div class="form-group">
@@ -275,7 +359,7 @@
         <div class="form-row">
           <div class="form-group">
             <label for="shop_variant">Color o modelo preferido</label>
-            <input id="shop_variant" placeholder="Negro, beige, compacto..." />
+            <input id="shop_variant" placeholder="Negro, USB-C, set x2, compacto..." />
           </div>
           <div class="form-group">
             <label for="shop_city">Ciudad o zona de entrega</label>
