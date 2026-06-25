@@ -1,0 +1,83 @@
+.visas-hero {
+  position: relative;
+  padding: 9rem 0 4.5rem;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.visas-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(10,46,82,0.94) 0%, rgba(10,46,82,0.78) 48%, rgba(10,46,82,0.5) 100%);
+  pointer-events: none;
+}
+
+.visas-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.visas-carousel .visas-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.8s ease, transform 4.8s ease;
+}
+
+.visas-carousel .visas-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.visas-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.visas-hero .page-title,
+.visas-hero .page-desc {
+  text-shadow: 0 8px 26px rgba(0,0,0,0.28);
+}
+
+.visas-carousel-dots {
+  position: absolute;
+  right: max(1.5rem, calc((100vw - 1120px) / 2 + 1.5rem));
+  bottom: 1.6rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.38rem;
+}
+
+.visas-carousel-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+}
+
+.visas-carousel-dots span.active { background: var(--gold); }
+
+@media (max-width: 980px) {
+  .visas-hero::after { background: linear-gradient(90deg, rgba(10,46,82,0.94) 0%, rgba(10,46,82,0.82) 70%, rgba(10,46,82,0.62) 100%); }
+}
+
+@media (max-width: 640px) {
+  .visas-hero { padding: 8rem 0 3.5rem; }
+  .visas-hero::after { background: linear-gradient(180deg, rgba(10,46,82,0.55) 0%, rgba(10,46,82,0.94) 70%, rgba(10,46,82,0.98) 100%); }
+  .visas-carousel-dots { bottom: 1rem; right: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visas-carousel .visas-slide { transition: none; transform: none; }
+}
