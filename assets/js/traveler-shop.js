@@ -16,6 +16,90 @@ function initTravelerShopCarousel() {
   setInterval(() => showSlide((current + 1) % slides.length), 4200);
 }
 
+function initExtraTravelerShopProducts() {
+  const catalogGrid = document.getElementById('catalogGrid');
+  const productSelect = document.getElementById('shop_product');
+  if (!catalogGrid) return;
+
+  const products = [
+    {
+      category: 'aventura',
+      badge: 'Aventura',
+      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80',
+      alt: 'Protector solar para viaje de playa',
+      status: 'Sol y playa',
+      title: 'Protector Solar',
+      text: 'Protección práctica para playa, tours al aire libre y días largos bajo el sol.',
+      variants: ['SPF 30', 'SPF 50', 'Rostro', 'Familiar'],
+    },
+    {
+      category: 'aventura',
+      badge: 'Aventura',
+      image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80',
+      alt: 'Spray repelente para viaje',
+      status: 'Outdoor',
+      title: 'Spray repelente',
+      text: 'Ideal para excursiones, zonas tropicales, playas y escapadas con mucha actividad exterior.',
+      variants: ['Mini', 'Familiar', 'Citronela', 'Sin aroma'],
+    },
+    {
+      category: 'aventura',
+      badge: 'Aventura',
+      image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80',
+      alt: 'Gafas de sol para viaje',
+      status: 'Protección UV',
+      title: 'Gafas de sol',
+      text: 'Accesorio esencial para manejar, caminar, visitar playas y recorrer destinos soleados.',
+      variants: ['Negro', 'Carey', 'Polarizadas', 'UV400'],
+    },
+  ];
+
+  const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;',
+  }[char]));
+
+  const createProductCard = (product) => {
+    const article = document.createElement('article');
+    article.className = 'shop-card reveal';
+    article.dataset.category = product.category;
+    article.innerHTML = `
+      <div class="shop-card-img-wrap">
+        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.alt)}" />
+        <span class="cat-badge">${escapeHtml(product.badge)}</span>
+      </div>
+      <div class="shop-card-body">
+        <span class="shop-status">${escapeHtml(product.status)}</span>
+        <h3 class="card-title">${escapeHtml(product.title)}</h3>
+        <p class="card-text">${escapeHtml(product.text)}</p>
+        <div class="variant-row">${product.variants.map((variant) => `<span>${escapeHtml(variant)}</span>`).join('')}</div>
+        <button class="btn btn-small btn-navy shop-interest" type="button" data-product="${escapeHtml(product.title)}">Me interesa</button>
+      </div>`;
+    return article;
+  };
+
+  products.forEach((product) => {
+    if (!Array.from(catalogGrid.querySelectorAll('.shop-interest')).some((button) => button.dataset.product === product.title)) {
+      catalogGrid.appendChild(createProductCard(product));
+    }
+  });
+
+  if (productSelect) {
+    const aventuraGroup = Array.from(productSelect.querySelectorAll('optgroup')).find((group) => group.label === 'Aventura');
+    products.forEach((product) => {
+      const exists = Array.from(productSelect.options).some((option) => option.text === product.title || option.value === product.title);
+      if (!exists) {
+        const option = document.createElement('option');
+        option.textContent = product.title;
+        (aventuraGroup || productSelect).appendChild(option);
+      }
+    });
+  }
+}
+
 function initTravelerShopInquiry() {
   const modal = document.getElementById('shopModal');
   const form = document.getElementById('shopInquiryForm');
@@ -227,6 +311,7 @@ function initCategoryFilter() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initTravelerShopCarousel();
+  initExtraTravelerShopProducts();
   initTravelerShopInquiry();
   initImageModal();
   initCategoryFilter();
