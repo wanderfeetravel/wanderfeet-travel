@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paquetes | WanderFeet Travel & Visa</title>
-  <meta name="description" content="Paquetes personalizados para Europa, Caribe, Estados Unidos, Canadá, luna de miel, viajes familiares y multidestino." />
+  <title>Paquetes personalizados | WanderFeet Travel & Visa</title>
+  <meta name="description" content="Paquetes de viaje personalizados para Europa, Caribe, Estados Unidos, Canadá, luna de miel, viajes familiares y multidestino." />
   <link rel="canonical" href="https://wanderfeetravel.github.io/wanderfeet-travel/paquetes/" />
   <script type="application/ld+json">
   {
@@ -14,13 +14,16 @@
     "provider": {
       "@type": "TravelAgency",
       "name": "WanderFeet Travel & Visa"
-    }
+    },
+    "serviceType": ["Paquetes turísticos", "Viajes familiares", "Luna de miel", "Multidestino"]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/paquetes.css?v=2" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
   (function () {
     var script = document.createElement("script");
@@ -33,98 +36,181 @@
 <body data-page="paquetes">
   <div data-component="site-nav"></div>
 
-  <header class="page-hero">
-    <div class="container">
+  <header class="page-hero paquetes-hero">
+    <div class="paquetes-hero-bg paquetes-carousel" aria-hidden="true">
+      <img class="paquetes-slide active" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="paquetes-slide" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="paquetes-slide" src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="paquetes-slide" src="https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=1800&q=80" alt="" />
+    </div>
+    <div class="container paquetes-hero-inner">
       <span class="section-tag">Paquetes</span>
-      <h1 class="page-title">Paquetes de viaje personalizados.</h1>
-      <p class="page-desc">Cotización personalizada según destino, temporada, cantidad de viajeros y servicios incluidos.</p>
+      <h1 class="page-title">Viajes personalizados, armados alrededor de tu idea.</h1>
+      <p class="page-desc">Cotización privada según destino, temporada, cantidad de viajeros, vuelos, hoteles, experiencias y servicios incluidos.</p>
       <div class="page-actions">
-        <a class="btn btn-primary" data-wa-message="Hola, quiero cotizar un paquete de viaje personalizado con WanderFeet Travel & Visa.">Cotizar paquete</a>
-        <a class="btn btn-outline" href="https://klook.tpx.gr/15PzbWF1" target="_blank" rel="noopener">Explorar tours</a>
+        <a class="btn btn-primary" href="#cotizar-paquete">Cotizar paquete</a>
+        <a class="btn btn-outline" href="#destinos">Ver ideas de viaje</a>
       </div>
     </div>
+    <div class="paquetes-carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
   </header>
 
   <main>
-    <section class="section">
+    <section class="section" id="destinos">
       <div class="container">
         <div class="center reveal">
-          <h2 class="section-title">Diseñamos el viaje según tu objetivo.</h2>
-          <p class="section-desc">Combinamos vuelos, hoteles, rutas, actividades y asistencia según el tipo de experiencia que buscas.</p>
+          <span class="section-tag">Ideas de viaje</span>
+          <h2 class="section-title">Destinos y estilos que podemos organizar contigo.</h2>
+          <p class="section-desc">Cada paquete se adapta a fechas, presupuesto, ritmo de viaje y servicios que realmente necesitas.</p>
         </div>
 
-        <div class="grid grid-4" style="margin-top:2.5rem">
-          <article class="card reveal"><h3 class="card-title">Europa</h3><p class="card-text">Rutas clásicas o multidestino.</p></article>
-          <article class="card reveal"><h3 class="card-title">Caribe</h3><p class="card-text">Escapadas, resorts y experiencias tropicales.</p></article>
-          <article class="card reveal"><h3 class="card-title">Estados Unidos</h3><p class="card-text">Compras, parques, ciudades y familia.</p></article>
-          <article class="card reveal"><h3 class="card-title">Canadá</h3><p class="card-text">Turismo urbano y naturaleza.</p></article>
-          <article class="card reveal"><h3 class="card-title">Luna de miel</h3><p class="card-text">Viajes especiales con detalles cuidados.</p></article>
-          <article class="card reveal"><h3 class="card-title">Viajes familiares</h3><p class="card-text">Opciones cómodas para todos.</p></article>
-          <article class="card reveal"><h3 class="card-title">Multidestino</h3><p class="card-text">Itinerarios con varias ciudades o países.</p></article>
-          <article class="card reveal"><h3 class="card-title">Tours y experiencias</h3><p class="card-text">Actividades, entradas y experiencias disponibles mediante Klook.</p><a class="btn btn-small btn-sky" href="https://klook.tpx.gr/15PzbWF1" target="_blank" rel="noopener">Ver experiencias</a></article>
+        <div class="package-destination-grid">
+          <article class="package-destination-card reveal">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80" alt="Europa" />
+            <div><span class="package-chip">Europa</span><h3 class="card-title">Europa clásica o multidestino</h3><p class="card-text">Ciudades, trenes, hoteles céntricos y experiencias por ruta.</p></div>
+          </article>
+          <article class="package-destination-card reveal">
+            <img src="https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=800&q=80" alt="Caribe" />
+            <div><span class="package-chip">Caribe</span><h3 class="card-title">Playas, resorts y escapadas</h3><p class="card-text">Opciones para descanso, familia, pareja o celebraciones.</p></div>
+          </article>
+          <article class="package-destination-card reveal">
+            <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=800&q=80" alt="Estados Unidos" />
+            <div><span class="package-chip">Estados Unidos</span><h3 class="card-title">Ciudades, parques y compras</h3><p class="card-text">Rutas urbanas, familiares o combinadas según tu objetivo.</p></div>
+          </article>
+          <article class="package-destination-card reveal">
+            <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=800&q=80" alt="Canadá" />
+            <div><span class="package-chip">Canadá</span><h3 class="card-title">Naturaleza y ciudades</h3><p class="card-text">Toronto, Montreal, Vancouver y rutas con paisajes memorables.</p></div>
+          </article>
+          <article class="package-destination-card reveal">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80" alt="Luna de miel" />
+            <div><span class="package-chip">Luna de miel</span><h3 class="card-title">Viajes especiales</h3><p class="card-text">Hoteles, detalles y ritmo pensado para celebrar sin estrés.</p></div>
+          </article>
+          <article class="package-destination-card reveal">
+            <img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=800&q=80" alt="Viajes familiares" />
+            <div><span class="package-chip">Familia</span><h3 class="card-title">Viajes familiares</h3><p class="card-text">Hospedajes prácticos, tiempos cómodos y actividades para todos.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container split paquetes-split">
+        <div class="reveal">
+          <span class="section-tag">Qué puede incluir</span>
+          <h2 class="section-title">Armamos el paquete por piezas, no por promesas genéricas.</h2>
+          <p class="section-desc">La propuesta puede combinar servicios de WanderFeet y aliados externos, siempre explicando qué depende de cada proveedor.</p>
+          <div class="package-include-grid">
+            <span>Vuelos</span>
+            <span>Hoteles</span>
+            <span>Tours</span>
+            <span>Traslados</span>
+            <span>Seguro</span>
+            <span>eSIM</span>
+            <span>Itinerario</span>
+            <span>Traveler Shop</span>
+          </div>
+        </div>
+        <div class="consult-panel reveal">
+          <div><strong>1</strong><span>Nos cuentas destino, fechas y estilo de viaje.</span></div>
+          <div><strong>2</strong><span>Revisamos vuelos, hoteles y servicios compatibles.</span></div>
+          <div><strong>3</strong><span>Recibes una propuesta privada y ajustable.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split paquetes-split">
+        <div class="reveal">
+          <span class="section-tag">Complementos</span>
+          <h2 class="section-title">Servicios que pueden mejorar la experiencia.</h2>
+          <p class="section-desc">Puedes explorar aliados externos o pedirnos que los consideremos dentro de tu cotización.</p>
+          <div class="package-partner-grid">
+            <a href="https://klook.tpx.gr/15PzbWF1" target="_blank" rel="noopener"><span>Tours</span><strong>Klook</strong></a>
+            <a href="https://gocity.tpx.gr/qaKZ7NLe" target="_blank" rel="noopener"><span>Pases</span><strong>Go City</strong></a>
+            <a href="https://yesim.tpx.gr/cbebFUhd" target="_blank" rel="noopener"><span>Internet</span><strong>Yesim</strong></a>
+            <a href="https://kiwitaxi.tpx.gr/mvySxtdG" target="_blank" rel="noopener"><span>Traslados</span><strong>Kiwitaxi</strong></a>
+          </div>
+          <div class="notice" style="margin-top:1.5rem">Los servicios de aliados externos están sujetos a disponibilidad, precios, políticas y condiciones de cada proveedor.</div>
         </div>
 
-        <div class="notice reveal" style="margin-top:2rem">No publicamos precio fijo para paquetes. Cada cotización depende de destino, temporada, cantidad de viajeros y servicios incluidos.</div>
+        <div class="form-card reveal" id="cotizar-paquete">
+          <h2 class="form-title">Cotizar paquete personalizado</h2>
+          <form id="packageForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="p_name">Nombre</label>
+                <input id="p_name" required placeholder="Tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="p_phone">WhatsApp</label>
+                <input id="p_phone" type="tel" required placeholder="+1 (809) 000-0000" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="p_destination">Destino</label>
+                <input id="p_destination" required placeholder="Europa, Caribe, Canadá..." />
+              </div>
+              <div class="form-group">
+                <label for="p_style">Tipo de viaje</label>
+                <select id="p_style">
+                  <option>Vacaciones</option>
+                  <option>Luna de miel</option>
+                  <option>Viaje familiar</option>
+                  <option>Multidestino</option>
+                  <option>Compras</option>
+                  <option>Aventura / experiencias</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="p_depart">Fecha tentativa</label>
+                <input id="p_depart" type="date" />
+              </div>
+              <div class="form-group">
+                <label for="p_days">Duración</label>
+                <input id="p_days" placeholder="Ej. 7 noches" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="p_travelers">Viajeros</label>
+                <select id="p_travelers">
+                  <option>1 viajero</option>
+                  <option>2 viajeros</option>
+                  <option>3 viajeros</option>
+                  <option>4+ viajeros</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="p_budget">Presupuesto aproximado</label>
+                <input id="p_budget" placeholder="Por persona o total" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="p_includes">Servicios que deseas incluir</label>
+              <select id="p_includes">
+                <option>Vuelo + hotel</option>
+                <option>Vuelo + hotel + tours</option>
+                <option>Hotel + tours</option>
+                <option>Paquete completo con traslados y seguro</option>
+                <option>Aún no estoy seguro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="p_notes">Detalles importantes</label>
+              <textarea id="p_notes" placeholder="Ciudades, ocasión especial, niños, visa, preferencias de hotel, tours, ritmo del viaje..."></textarea>
+            </div>
+            <button class="btn btn-navy form-submit" type="submit">Enviar solicitud por WhatsApp</button>
+          </form>
+        </div>
       </div>
     </section>
 
     <section class="section section-blue">
       <div class="container">
-        <div class="center reveal">
-          <span class="section-tag">Aliados externos</span>
-          <h2 class="section-title">Complementos de viaje con botones directos.</h2>
-          <p class="section-desc">Para paquetes, los enlaces directos son más claros que cargar varios widgets. Puedes explorar cada servicio y luego pedirnos ayuda para integrarlo a tu viaje.</p>
-        </div>
-
-        <div class="grid grid-4" style="margin-top:2.5rem">
-          <article class="card reveal">
-            <span class="placeholder-badge">Experiencias</span>
-            <h3 class="card-title">Tours y actividades</h3>
-            <p class="card-text">Excursiones, entradas y experiencias para sumar al itinerario.</p>
-            <a class="btn btn-small btn-sky" href="https://klook.tpx.gr/15PzbWF1" target="_blank" rel="noopener">Explorar Klook</a>
-          </article>
-          <article class="card reveal">
-            <span class="placeholder-badge">Atracciones</span>
-            <h3 class="card-title">Pases turísticos</h3>
-            <p class="card-text">Pases y entradas para ciudades seleccionadas.</p>
-            <a class="btn btn-small btn-sky" href="https://gocity.tpx.gr/qaKZ7NLe" target="_blank" rel="noopener">Ver Go City</a>
-          </article>
-          <article class="card reveal">
-            <span class="placeholder-badge">Conectividad</span>
-            <h3 class="card-title">eSIM internacional</h3>
-            <p class="card-text">Internet móvil para mantenerte conectado fuera del país.</p>
-            <a class="btn btn-small btn-sky" href="https://yesim.tpx.gr/cbebFUhd" target="_blank" rel="noopener">Ver Yesim</a>
-          </article>
-          <article class="card reveal">
-            <span class="placeholder-badge">Transporte</span>
-            <h3 class="card-title">Traslados</h3>
-            <p class="card-text">Transporte privado para aeropuertos, hoteles y puntos importantes.</p>
-            <a class="btn btn-small btn-sky" href="https://kiwitaxi.tpx.gr/mvySxtdG" target="_blank" rel="noopener">Ver Kiwitaxi</a>
-          </article>
-          <article class="card reveal">
-            <span class="placeholder-badge">Equipaje</span>
-            <h3 class="card-title">Guarda equipaje</h3>
-            <p class="card-text">Guarda tus maletas por horas mientras aprovechas el destino.</p>
-            <a class="btn btn-small btn-sky" href="https://radicalstorage.tpx.gr/AQn3z2oT" target="_blank" rel="noopener">Ver Radical Storage</a>
-          </article>
-        </div>
-
-        <div class="notice reveal" style="margin-top:2rem">Los servicios de aliados externos están sujetos a disponibilidad, precios, políticas y condiciones de cada proveedor. WanderFeet puede ayudarte a evaluar si encajan en tu paquete.</div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container split">
-        <div class="reveal">
-          <span class="section-tag">Asistencia WanderFeet</span>
-          <h2 class="section-title">No todo se compra con un click.</h2>
-          <p class="section-desc">Para paquetes completos, lo más importante es que el vuelo, hotel, traslados, tours y tiempos tengan coherencia. Revisamos el conjunto antes de recomendar una compra.</p>
-        </div>
-        <div class="consult-panel reveal">
-          <div><strong>1</strong><span>Eliges destino y fechas tentativas.</span></div>
-          <div><strong>2</strong><span>Exploramos aliados y disponibilidad.</span></div>
-          <div><strong>3</strong><span>Armamos una propuesta privada.</span></div>
-        </div>
+        <div class="notice reveal">No publicamos precio fijo para paquetes. Cada cotización depende de destino, temporada, cantidad de viajeros, disponibilidad y servicios incluidos.</div>
       </div>
     </section>
   </main>
@@ -132,5 +218,6 @@
   <div data-component="site-footer"></div>
   <div data-component="whatsapp-float"></div>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/paquetes.js?v=2"></script>
 </body>
 </html>
