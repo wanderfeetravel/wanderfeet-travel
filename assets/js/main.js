@@ -169,6 +169,22 @@ function initWhatsAppButtons() {
   });
 }
 
+function initHomeCarousel() {
+  const slides = Array.from(document.querySelectorAll('.home-carousel .home-slide'));
+  const dots = Array.from(document.querySelectorAll('.home-carousel-dots span'));
+  if (slides.length < 2) return;
+  let current = 0;
+  const showSlide = (index) => {
+    slides[current].classList.remove('active');
+    dots[current]?.classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current]?.classList.add('active');
+  };
+  dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+  setInterval(() => showSlide((current + 1) % slides.length), 4600);
+}
+
 function initVisaModals() {
   const modal = document.getElementById('visaModal');
   if (!modal) return;
@@ -327,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initReveal();
   initWhatsAppButtons();
+  initHomeCarousel();
   initVisaModals();
   initFlightForm();
   initContactForm();
