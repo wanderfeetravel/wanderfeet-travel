@@ -27,6 +27,20 @@ function initTravelerShopSpacing() {
       padding-top: 2.5rem;
     }
 
+    #imgViewerMain {
+      filter: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .img-viewer-main-wrap img {
+      object-fit: cover;
+    }
+
+    .img-thumb img {
+      opacity: 1 !important;
+    }
+
     @media (max-width: 640px) {
       body[data-page="traveler-shop"] #catalogo {
         padding-bottom: 1.75rem;
@@ -218,10 +232,10 @@ function initImageModal() {
   const selectVariant = (variantName, filter, thumbEl) => {
     currentVariant = variantName;
     const mainImg = document.getElementById('imgViewerMain');
-    mainImg.style.transition = 'filter 0.35s ease, transform 0.2s ease';
+    mainImg.style.transition = 'transform 0.2s ease';
     mainImg.style.transform = 'scale(0.97)';
     setTimeout(() => {
-      mainImg.style.filter = filter;
+      mainImg.style.filter = 'none';
       mainImg.style.transform = 'scale(1)';
     }, 80);
     document.getElementById('imgViewerVariantName').textContent = variantName;
@@ -258,7 +272,7 @@ function initImageModal() {
         thumb.innerHTML = `<img src="${img.src}" alt="${v}" style="filter:${filter}" /><span>${v}</span>`;
         if (i === 0) {
           thumb.classList.add('active');
-          mainImg.style.filter = filter === 'none' ? 'none' : filter;
+          mainImg.style.filter = 'none';
         }
         thumb.addEventListener('click', () => selectVariant(v, filter, thumb));
         thumbsContainer.appendChild(thumb);
