@@ -16,6 +16,30 @@ function initTravelerShopCarousel() {
   setInterval(() => showSlide((current + 1) % slides.length), 4200);
 }
 
+function initTravelerShopSpacing() {
+  const style = document.createElement('style');
+  style.textContent = `
+    body[data-page="traveler-shop"] #catalogo {
+      padding-bottom: 2.5rem;
+    }
+
+    body[data-page="traveler-shop"] #catalogo + .section.section-soft {
+      padding-top: 2.5rem;
+    }
+
+    @media (max-width: 640px) {
+      body[data-page="traveler-shop"] #catalogo {
+        padding-bottom: 1.75rem;
+      }
+
+      body[data-page="traveler-shop"] #catalogo + .section.section-soft {
+        padding-top: 1.75rem;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 function initExtraTravelerShopProducts() {
   const catalogGrid = document.getElementById('catalogGrid');
   const productSelect = document.getElementById('shop_product');
@@ -144,38 +168,27 @@ function initTravelerShopInquiry() {
 
 function initImageModal() {
   const COLOR_FILTERS = {
-    'negro':       'grayscale(1) brightness(0.38)',
-    'negra':       'grayscale(1) brightness(0.38)',
-    'miel':        'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
-    'azul':        'hue-rotate(195deg) saturate(1.5) brightness(0.88)',
+    'negro': 'grayscale(1) brightness(0.38)',
+    'negra': 'grayscale(1) brightness(0.38)',
+    'miel': 'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
+    'azul': 'hue-rotate(195deg) saturate(1.5) brightness(0.88)',
     'azul marino': 'hue-rotate(210deg) saturate(1.6) brightness(0.72)',
-    'gris':        'grayscale(0.75) brightness(0.9)',
-    'verde':       'hue-rotate(100deg) saturate(1.3) brightness(0.9)',
+    'gris': 'grayscale(0.75) brightness(0.9)',
+    'verde': 'hue-rotate(100deg) saturate(1.3) brightness(0.9)',
     'verde oliva': 'hue-rotate(85deg) saturate(0.9) brightness(0.75)',
-    'rosa':        'hue-rotate(310deg) saturate(1.5) brightness(1.05)',
-    'beige':       'sepia(0.45) saturate(0.8) brightness(1.18)',
-    'naranja':     'hue-rotate(28deg) saturate(2) brightness(1.05)',
-    'lavanda':     'hue-rotate(255deg) saturate(0.85) brightness(1.08)',
-    'blanco':      'grayscale(0.2) brightness(1.55) saturate(0.4)',
-    'rose gold':   'hue-rotate(340deg) saturate(0.9) brightness(1.1) sepia(0.25)',
-    'cuero':       'sepia(0.55) saturate(1.6) hue-rotate(8deg) brightness(0.95)',
+    'rosa': 'hue-rotate(310deg) saturate(1.5) brightness(1.05)',
+    'beige': 'sepia(0.45) saturate(0.8) brightness(1.18)',
+    'naranja': 'hue-rotate(28deg) saturate(2) brightness(1.05)',
+    'lavanda': 'hue-rotate(255deg) saturate(0.85) brightness(1.08)',
+    'blanco': 'grayscale(0.2) brightness(1.55) saturate(0.4)',
+    'rose gold': 'hue-rotate(340deg) saturate(0.9) brightness(1.1) sepia(0.25)',
+    'cuero': 'sepia(0.55) saturate(1.6) hue-rotate(8deg) brightness(0.95)',
     'cuero negro': 'grayscale(1) brightness(0.32)',
-    'cuero miel':  'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
-    'silicona':    'hue-rotate(180deg) saturate(1.2) brightness(1.0)',
+    'cuero miel': 'sepia(0.7) saturate(2) hue-rotate(5deg) brightness(1.1)',
+    'silicona': 'hue-rotate(180deg) saturate(1.2) brightness(1.0)',
   };
-
-  // Fallback filters when the variant name isn't a color (sizes, types, etc.)
-  const FALLBACK_FILTERS = [
-    'none',
-    'brightness(0.82) saturate(1.2) contrast(1.08)',
-    'brightness(1.12) saturate(0.78) hue-rotate(12deg)',
-    'sepia(0.3) brightness(0.95) saturate(1.1)',
-  ];
-
-  const getFilter = (variantName, index) => {
-    const key = variantName.toLowerCase().trim();
-    return COLOR_FILTERS[key] || FALLBACK_FILTERS[index] || FALLBACK_FILTERS[0];
-  };
+  const FALLBACK_FILTERS = ['none', 'brightness(0.82) saturate(1.2) contrast(1.08)', 'brightness(1.12) saturate(0.78) hue-rotate(12deg)', 'sepia(0.3) brightness(0.95) saturate(1.1)'];
+  const getFilter = (variantName, index) => COLOR_FILTERS[variantName.toLowerCase().trim()] || FALLBACK_FILTERS[index] || FALLBACK_FILTERS[0];
 
   const modal = document.createElement('div');
   modal.id = 'imgViewerModal';
@@ -183,9 +196,7 @@ function initImageModal() {
   modal.innerHTML = `
     <div class="img-viewer-box" role="dialog" aria-modal="true" aria-label="Vista de producto">
       <button class="img-viewer-close" aria-label="Cerrar">&times;</button>
-      <div class="img-viewer-main-wrap">
-        <img id="imgViewerMain" src="" alt="" />
-      </div>
+      <div class="img-viewer-main-wrap"><img id="imgViewerMain" src="" alt="" /></div>
       <div class="img-viewer-info">
         <h3 class="img-viewer-title" id="imgViewerTitle"></h3>
         <p class="img-viewer-variant-label">Variante seleccionada: <strong id="imgViewerVariantName"></strong></p>
@@ -207,7 +218,6 @@ function initImageModal() {
   const selectVariant = (variantName, filter, thumbEl) => {
     currentVariant = variantName;
     const mainImg = document.getElementById('imgViewerMain');
-    // Animate the filter change on the main image
     mainImg.style.transition = 'filter 0.35s ease, transform 0.2s ease';
     mainImg.style.transform = 'scale(0.97)';
     setTimeout(() => {
@@ -229,17 +239,13 @@ function initImageModal() {
       const title = card.querySelector('.card-title')?.textContent || '';
       const interestBtn = card.querySelector('.shop-interest');
       currentProduct = interestBtn?.dataset.product || title;
-
-      const variantSpans = Array.from(card.querySelectorAll('.variant-row span'));
-      const variants = variantSpans.map((s) => s.textContent.trim());
+      const variants = Array.from(card.querySelectorAll('.variant-row span')).map((s) => s.textContent.trim());
 
       document.getElementById('imgViewerTitle').textContent = title;
       const mainImg = document.getElementById('imgViewerMain');
       mainImg.src = img.src;
       mainImg.alt = img.alt;
       mainImg.style.filter = 'none';
-      mainImg.style.transition = 'filter 0.35s ease, transform 0.2s ease';
-
       const thumbsContainer = document.getElementById('imgViewerThumbs');
       thumbsContainer.innerHTML = '';
 
@@ -261,7 +267,6 @@ function initImageModal() {
       currentVariant = variants[0] || '';
       document.getElementById('imgViewerVariantName').textContent = currentVariant;
       document.getElementById('imgViewerInterestLabel').textContent = currentVariant;
-
       modal.classList.add('show');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
@@ -272,7 +277,6 @@ function initImageModal() {
     closeViewer();
     setTimeout(() => window._openShopInquiry(currentProduct, currentVariant), 120);
   });
-
   modal.querySelector('.img-viewer-close').addEventListener('click', closeViewer);
   modal.addEventListener('click', (e) => { if (e.target === modal) closeViewer(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('show')) closeViewer(); });
@@ -310,6 +314,7 @@ function initCategoryFilter() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTravelerShopSpacing();
   initTravelerShopCarousel();
   initExtraTravelerShopProducts();
   initTravelerShopInquiry();
