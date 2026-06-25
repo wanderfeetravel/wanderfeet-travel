@@ -56,4 +56,36 @@ function initTravelerShopInquiry() {
 document.addEventListener('DOMContentLoaded', () => {
   initTravelerShopCarousel();
   initTravelerShopInquiry();
+  initCategoryFilter();
 });
+
+function initCategoryFilter() {
+  const filters = document.querySelectorAll('.shop-filter');
+  const cards = document.querySelectorAll('#catalogGrid .shop-card');
+  const countEl = document.getElementById('shopCount');
+  if (!filters.length || !cards.length) return;
+
+  const updateCount = (visible) => {
+    if (countEl) countEl.textContent = `Mostrando ${visible} de ${cards.length} productos`;
+  };
+
+  const applyFilter = (filter) => {
+    let visible = 0;
+    cards.forEach((card) => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('cat-hidden', !match);
+      if (match) visible++;
+    });
+    updateCount(visible);
+  };
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filters.forEach((f) => f.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  updateCount(cards.length);
+}
