@@ -32,6 +32,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
@@ -47,7 +48,13 @@
   <div data-component="site-nav"></div>
 
   <header class="hero home-hero" id="inicio">
-    <div class="container hero-inner">
+    <div class="home-hero-bg home-carousel" aria-hidden="true">
+      <img class="home-slide active" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="home-slide" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="home-slide" src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1800&q=80" alt="" />
+      <img class="home-slide" src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1800&q=80" alt="" />
+    </div>
+    <div class="container hero-inner home-hero-inner">
       <div class="hero-content reveal">
         <div class="hero-eyebrow">Centro Integral de Asistencia al Viajero</div>
         <h1 class="hero-title">Tu compañero antes, durante y despues del viaje.</h1>
@@ -63,17 +70,8 @@
           <div><span class="stat-num">Shop</span><span class="stat-label">articulos esenciales</span></div>
         </div>
       </div>
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="home-visual-stack">
-          <div class="globe-shell"><canvas id="globeCanvas" width="340" height="340"></canvas></div>
-          <div class="journey-panel">
-            <span>Asistencia 360</span>
-            <strong>Visa + viaje + equipaje</strong>
-            <small>Todo organizado en un solo proceso.</small>
-          </div>
-        </div>
-      </div>
     </div>
+    <div class="home-carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
   </header>
 
   <main>
@@ -111,7 +109,7 @@
             <div class="home-service-body">
               <span class="placeholder-badge">Equipaje</span>
               <h3 class="card-title">Traveler Shop</h3>
-              <p class="card-text">Articulos esenciales para viajar comodo, organizado y seguro.</p>
+              <p class="card-text">Accesorios seleccionados para viajar con mas orden, comodidad y tranquilidad.</p>
               <a class="btn btn-small btn-navy" href="/wanderfeet-travel/traveler-shop/">Ver tienda</a>
             </div>
           </article>
@@ -134,6 +132,47 @@
           <div><strong>1</strong><span>Nos cuentas destino y objetivo.</span></div>
           <div><strong>2</strong><span>Revisamos que servicio aplica.</span></div>
           <div><strong>3</strong><span>Recibes una propuesta privada.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-shop-feature">
+      <div class="container">
+        <div class="center reveal">
+          <span class="section-tag">Traveler Shop</span>
+          <h2 class="section-title">Kits y accesorios para viajar mejor.</h2>
+          <p class="section-desc">Una selección práctica para documentos, cabina, conectividad y organización de equipaje.</p>
+        </div>
+
+        <div class="home-kit-grid reveal">
+          <article class="home-kit-card">
+            <img src="assets/img/shop/porta-pasaportes.png" alt="Kit primer viaje internacional" />
+            <div>
+              <span class="shop-status">Más consultado</span>
+              <h3 class="card-title">Kit Primer Viaje Internacional</h3>
+              <p class="card-text">Porta pasaporte, adaptador, organizadores y etiqueta.</p>
+            </div>
+          </article>
+          <article class="home-kit-card">
+            <img src="assets/img/visas/documentos-asesoria.png" alt="Kit visa y documentos" />
+            <div>
+              <span class="shop-status">Visa ready</span>
+              <h3 class="card-title">Kit Visa & Documentos</h3>
+              <p class="card-text">Para mantener pasaporte, reservas y expediente en orden.</p>
+            </div>
+          </article>
+          <article class="home-kit-card">
+            <img src="assets/img/shop/organizadores-maleta.png" alt="Kit solo carry-on" />
+            <div>
+              <span class="shop-status">Cabina</span>
+              <h3 class="card-title">Kit Solo Carry-On</h3>
+              <p class="card-text">Packing cubes, bascula, bolsa para zapatos y neceser.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="center reveal" style="margin-top:2rem">
+          <a class="btn btn-navy" href="/wanderfeet-travel/traveler-shop/">Ver Traveler Shop</a>
         </div>
       </div>
     </section>
@@ -183,23 +222,6 @@
           <img src="assets/img/visas/canada-visa.png" alt="Documentos para viajar" />
           <img src="assets/img/shop/porta-pasaportes.png" alt="Porta pasaportes Traveler Shop" />
           <img src="assets/img/shop/organizadores-maleta.png" alt="Organizadores de maleta" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split">
-        <div class="reveal">
-          <span class="section-tag">Traveler Shop</span>
-          <h2 class="section-title">Traveler Shop by WanderFeet</h2>
-          <p class="section-desc">Articulos esenciales para viajar comodo, organizado y seguro.</p>
-          <a class="btn btn-navy" href="/wanderfeet-travel/traveler-shop/" style="margin-top:1.5rem">Ver Traveler Shop</a>
-        </div>
-        <div class="shop-preview-grid reveal">
-          <article><img src="assets/img/shop/bolsos-mano.png" alt="Bolsos de mano" /><span>Bolsos de mano</span></article>
-          <article><img src="assets/img/shop/porta-pasaportes.png" alt="Porta pasaportes" /><span>Porta pasaportes</span></article>
-          <article><img src="assets/img/shop/adaptadores-universales.png" alt="Adaptadores universales" /><span>Adaptadores</span></article>
-          <article><img src="assets/img/shop/candados-tsa.png" alt="Candados TSA" /><span>Candados TSA</span></article>
         </div>
       </div>
     </section>
