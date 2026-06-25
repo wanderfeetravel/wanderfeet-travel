@@ -1,0 +1,17 @@
+body[data-page="traveler-shop"] #catalogo {
+  padding-bottom: 2.5rem;
+}
+
+body[data-page="traveler-shop"] #catalogo + .section.section-soft {
+  padding-top: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  body[data-page="traveler-shop"] #catalogo {
+    padding-bottom: 1.75rem;
+  }
+
+  body[data-page="traveler-shop"] #catalogo + .section.section-soft {
+    padding-top: 1.75rem;
+  }
+}
