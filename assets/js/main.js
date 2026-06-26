@@ -32,7 +32,7 @@ function mountNav() {
     <nav class="site-nav" aria-label="Navegación principal">
       <div class="container nav-inner">
         <a class="nav-logo" href="${WF_BASE}" aria-label="WanderFeet Travel & Visa">
-          <span class="logo-mark">WF</span>
+          <img src="/assets/img/logo1.png" alt="WanderFeet Travel & Visa" class="nav-logo-img" style="height:40px;width:auto;" />
           <span class="nav-brand">WanderFeet <span>Travel & Visa</span></span>
         </a>
         <ul class="nav-links" id="navLinks">${links}</ul>
