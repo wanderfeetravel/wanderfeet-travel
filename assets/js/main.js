@@ -33,7 +33,6 @@ function mountNav() {
       <div class="container nav-inner">
         <a class="nav-logo" href="${WF_BASE}" aria-label="WanderFeet Travel & Visa">
           <img src="/assets/img/logo1.png" alt="WanderFeet Travel & Visa" class="nav-logo-img" style="height:40px;width:auto;" />
-          <span class="nav-brand">WanderFeet <span>Travel & Visa</span></span>
         </a>
         <ul class="nav-links" id="navLinks">${links}</ul>
         <a class="btn btn-primary btn-small nav-cta" href="${waLink('Hola, quiero solicitar asesoría con WanderFeet Travel & Visa.')}" target="_blank" rel="noopener">WhatsApp</a>
