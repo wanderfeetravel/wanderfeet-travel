@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wanderfeetravel.github.io/wanderfeet-travel/sitemap.xml
+Sitemap: https://wanderfeetravel.com/sitemap.xml
