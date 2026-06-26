@@ -32,7 +32,7 @@ function mountNav() {
     <nav class="site-nav" aria-label="Navegación principal">
       <div class="container nav-inner">
         <a class="nav-logo" href="${WF_BASE}" aria-label="WanderFeet Travel & Visa">
-          <img src="/assets/img/logo2.png" alt="WanderFeet Travel & Visa" class="nav-logo-img" style="height:52px;width:auto;" />
+          <span style="font-family:Poppins,sans-serif;font-size:1.35rem;font-weight:800;color:#ffffff;letter-spacing:-0.5px;line-height:1.1;">WanderFeet<br><span style="font-size:0.72rem;font-weight:600;color:#F5A623;letter-spacing:1.5px;text-transform:uppercase;">Travel &amp; Visa</span></span>
         </a>
         <ul class="nav-links" id="navLinks">${links}</ul>
         <a class="btn btn-primary btn-small nav-cta" href="${waLink('Hola, quiero solicitar asesoría con WanderFeet Travel & Visa.')}" target="_blank" rel="noopener">WhatsApp</a>
